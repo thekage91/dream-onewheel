@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .row(hidden)
+    .col-md-12.text-center
+      img(src="images/art.png")
+      p.lead
+        | Are you a dreamer? <br>Join and wait your onewheel with us 
+  .row 
+    div.col-md-1(hidden)
+      .btn.btn-default.user-circle
+        span
+          | You
+    div.col-md-12
+      each val in users
+          .btn.btn-default.user-circle(style={ "background-image": "url(" + val.photo + ")" }, title=val.name)
