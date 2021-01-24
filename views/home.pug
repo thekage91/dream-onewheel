@@ -13,6 +13,6 @@ block content
           | You
     div.col-md-12
       if user
-        .btn.btn-default.me.user-circle(style={ "background-image": "url(" + user.profile.picture + ")" }, title=user.profile.name)
+        a.btn.btn-default.me.user-circle(style={ "background": "url(" + user.profile.picture + ")", "background-size": "cover" }, title=user.profile.name, href="/account")
       each val in users
-          .btn.btn-default.user-circle(style={ "background-image": "url(" + val.photo + ")" }, title=val.name)
+        a.btn.btn-default.user-circle(style={ "background": `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${ val.photo || val.profile.picture })`, "background-size": "cover"  }, title=val.name || val.profile.name, target='_blank')
